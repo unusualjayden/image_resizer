@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Список изображений</h1>
+    {% if not images %}
+        <p>Нет доступных изображений</p>
+    {% else %}
+        {% for image in images %}
+            <a href={% url "resizer:edit" image_hash=image.image_hash %}>{{ image.image_hash }}</a><br>
+        {% endfor %}
+    {% endif %}
+
+    <a href={% url "resizer:upload" %}>Добавить изображение</a>
+{% endblock %}

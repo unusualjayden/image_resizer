@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>
+        <a href="{% url 'resizer:main' %}">Назад к списку</a>
+        <h1>Новое изображение</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+
+                <div>
+                    <p>Ссылка</p>
+                    {{ form.image_from_url }}
+                </div>
+                <br>
+                <div>
+                    <p>Файл</p>
+                    {{ form.image_file }}
+                </div>
+
+                <button type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
