@@ -2,7 +2,7 @@
 
 ## Запуск
 * Склонировать репозиторий
-* cd blog_with_threaded_comments
+* cd image_resizer
 * python -m venv venv
 * source venv/bin/activate
 * pip install -r requirements.txt
